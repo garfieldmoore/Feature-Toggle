@@ -1,0 +1,9 @@
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\Ef.CodeFirstConfig.exe.config
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\Ef.CodeFirstConfig.exe
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\Ef.CodeFirstConfig.pdb
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\EntityFramework.dll
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\Toggler.pdb
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\bin\Release\EntityFramework.xml
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\obj\x86\Release\Ef.CodeFirstConfig.exe
+D:\Community Code\Rainbow\Ef.CodeFirstConfig\Ef.CodeFirstConfig\obj\x86\Release\Ef.CodeFirstConfig.pdb
