@@ -58,9 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="readme.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="App.config.transform">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
