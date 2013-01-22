@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler.Demo", "Ef.CodeFirstConfig\Toggler.Demo.csproj", "{64980F0C-A597-4726-950B-52BB0FFC97B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler.Demo", "FeatureToggle.Demo\Toggler.Demo.csproj", "{64980F0C-A597-4726-950B-52BB0FFC97B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler", "Toggler\Toggler.csproj", "{F36FB021-6553-438E-A1F1-35A774C4EA5D}"
 EndProject
