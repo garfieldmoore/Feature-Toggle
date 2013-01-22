@@ -5,9 +5,8 @@
     <version>1.0.1</version>
     <authors>garfield.moore</authors>
     <owners>garfield.moore</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl>https://github.com/garfieldmoore/Feature-Toggle/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/garfieldmoore/Feature-Toggle</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Feature Toggle framework</description>
     <releaseNotes>Initial Version</releaseNotes>
@@ -15,4 +14,8 @@
     <dependencies>
     </dependencies>
   </metadata>
+   <files>
+        <file src="buildArtifacts\bin\components\Toggler.dll" target="lib\net35\Toggler.dll" />
+        <file src="buildArtifacts\bin\components\App.config.transform" target="content\App.config.transform" />
+    </files>
 </package>
