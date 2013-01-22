@@ -7,8 +7,15 @@ namespace Ef.CodeFirstConfig
 
     internal class Program
     {
+        public static void BootStrapper()
+        {
+            Features.Initialize(new FeatureConfigSectionSwitchFactory());    
+        }
+
         private static void Main(string[] args)
         {
+            BootStrapper();
+
             if (Features.IsAvailable("Entity Framework"))
             {
                 Console.WriteLine("Entity framework is enabled.");

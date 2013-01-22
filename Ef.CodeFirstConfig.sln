@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler.Demo", "Ef.CodeFirstConfig\Toggler.Demo.csproj", "{64980F0C-A597-4726-950B-52BB0FFC97B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler", "Toggler\Toggler.csproj", "{F36FB021-6553-438E-A1F1-35A774C4EA5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Tests.Unit", "FeatureToggle.Tests.Unit\FeatureToggle.Tests.Unit.csproj", "{CCFACC4F-CD78-41FF-8237-F339EC9F1653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,16 @@ Global
 		{F36FB021-6553-438E-A1F1-35A774C4EA5D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F36FB021-6553-438E-A1F1-35A774C4EA5D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F36FB021-6553-438E-A1F1-35A774C4EA5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
