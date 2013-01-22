@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toggler\Toggler.csproj">
+    <ProjectReference Include="..\..\source\Toggler\Toggler.csproj">
       <Project>{f36fb021-6553-438e-a1f1-35a774c4ea5d}</Project>
       <Name>Toggler</Name>
     </ProjectReference>
