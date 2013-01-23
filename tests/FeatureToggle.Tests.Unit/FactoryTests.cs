@@ -1,16 +1,17 @@
-﻿using System;
-using NSubstitute;
-using NUnit.Framework;
-using Toggles.Configuration;
-using Shouldly;
+﻿using NSubstitute;
 
 namespace FeatureToggle.Tests.Unit
 {
+    using System;
+    using NUnit.Framework;
+    using Toggles.Configuration;
+    using Shouldly;
+
     [TestFixture]
     public class FactoryTests
     {
         private ISwitch _switcher;
-        private ISwitchFactory _switchFactory;
+        private ISwitchProviderFactory _switchProviderFactory;
 
         [Test]
         public void Features_should_invoke_factory()
@@ -18,7 +19,7 @@ namespace FeatureToggle.Tests.Unit
             Given_a_switch_factory_with_a_switch_initialised();
 
             Features.IsAvailable("MyFeature");
-            _switchFactory.Create().Received(1);
+            _switchProviderFactory.Received().Create();
         }
 
         [Test]
@@ -53,9 +54,9 @@ namespace FeatureToggle.Tests.Unit
         private void Given_a_switch_factory_with_a_switch_initialised()
         {
             _switcher = Substitute.For<ISwitch>();
-            _switchFactory = Substitute.For<ISwitchFactory>();
-            _switchFactory.Create().Returns(_switcher);
-            Features.Initialize(_switchFactory);
+            _switchProviderFactory = Substitute.For<ISwitchProviderFactory>();
+            _switchProviderFactory.Create().Returns(_switcher);
+            Features.Initialize(_switchProviderFactory);
         }
     }
 }

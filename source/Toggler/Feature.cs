@@ -2,32 +2,12 @@ using System.Configuration;
 
 namespace Toggles.Configuration
 {
-    public class Feature : ConfigurationElement
+    public class Feature 
     {
-        [ConfigurationProperty("name", IsRequired = true)]
-        public string Name
-        {
-            get
-            {
-                return base["name"] as string;
-            }
-            set
-            {
-                base["name"] = value;
-            }
-        }
+        public string Name { get; set; }
+    
+        public bool State { get; set; }
 
-        [ConfigurationProperty("isAvailable", DefaultValue = false)]
-        public bool State
-        {
-            get
-            {
-                return (bool)base["isAvailable"];
-            }
-            set
-            {
-                base["state"] = value;
-            }
-        }
+        public Feature DependsOn { get; set; }
     }
 }

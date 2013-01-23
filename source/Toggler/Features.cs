@@ -1,15 +1,15 @@
-using System;
-using System.Configuration;
-
 namespace Toggles.Configuration
 {
+    using System;
+    using Factories;
+
     public class Features
     {
-        private static ISwitchFactory _switchFactory = new FeatureConfigSectionSwitchFactory();
+        private static ISwitchProviderFactory _switchProviderFactory = new ConfigurationSectionSwitchProviderFactory();
 
         public static bool IsAvailable(string featureName)
         {
-            return  _switchFactory.Create().IsAvaliable(featureName);
+            return  _switchProviderFactory.Create().IsAvaliable(featureName);
         }
 
         /// <summary>
@@ -18,11 +18,11 @@ namespace Toggles.Configuration
         /// <param name="factory">SwitchFactory to use to create concrete implementations of ISwitch</param>
         /// <remarks>This defaults to the custom Configuration file section</remarks>
         /// <exception cref="ArgumentNullException">Passing null will throw an exception</exception>
-        public static void Initialize(ISwitchFactory factory)
+        public static void Initialize(ISwitchProviderFactory factory)
         {
             if (factory == null) throw new ArgumentNullException("factory");
 
-            _switchFactory = factory;
+            _switchProviderFactory = factory;
         }
     }
 }

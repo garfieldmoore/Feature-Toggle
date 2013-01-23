@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35160C
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Tests.Acceptance", "FeatureToggle.Tests.Acceptance\FeatureToggle.Tests.Acceptance.csproj", "{601B7923-418D-411C-A635-329EE899D71A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,16 @@ Global
 		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CCFACC4F-CD78-41FF-8237-F339EC9F1653}.Release|x86.ActiveCfg = Release|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{601B7923-418D-411C-A635-329EE899D71A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

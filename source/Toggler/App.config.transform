@@ -5,7 +5,7 @@
 
   <FeatureConfiguration>
     <Features>
-      <add name="My Feature" isAvailable="false"/>
+      <add name="My Feature" isAvailable="true"/>
       <!-- 
         Turn the feature on;
       <add name="My Feature" isAvailable="true"/>
