@@ -10,7 +10,6 @@ namespace FeatureToggle.Tests.Acceptance
     [TestFixture]
     public class CustomConfigurationSectionTests
     {
-        private const string FeatureConfigurationSection = "FeatureConfiguration";
         private static ConfigSectionReader _configProvider;
 
         [Test]
@@ -18,7 +17,7 @@ namespace FeatureToggle.Tests.Acceptance
         {
             Given_a_configuration_reader_from_file(@"Integration\TestData\KeyNamePair.config");
 
-            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfigurationSection).ToList<FeatureElement>();                       
+            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).ToList<FeatureElement>();                       
 
             features.Count.ShouldBe(1);
             features.FirstOrDefault().Name.ShouldBe("Feature001");
@@ -30,7 +29,7 @@ namespace FeatureToggle.Tests.Acceptance
         {
             Given_a_configuration_reader_from_file(@"Integration\TestData\dependsOn.config");
 
-            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfigurationSection).ToList<FeatureElement>();
+            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).ToList<FeatureElement>();
 
             features.Count.ShouldBe(1);
             features.FirstOrDefault().DependsOn.ShouldBe("FeatureA");
@@ -41,7 +40,7 @@ namespace FeatureToggle.Tests.Acceptance
         {
             Given_a_configuration_reader_from_file(@"Integration\TestData\MultipleToggles.config");
 
-            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfigurationSection).ToList<FeatureElement>();
+            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).ToList<FeatureElement>();
 
             features.Count.ShouldBe(3);
         }

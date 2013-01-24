@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integration\ApplicationSettingsTests.cs" />
     <Compile Include="Integration\ConfigExtensions.cs" />
     <Compile Include="Integration\ConfigSectionReader.cs" />
     <Compile Include="Integration\CustomConfigurationSectionTests.cs" />
@@ -55,6 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Integration\TestData\App.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Integration\TestData\MultipleToggles.config">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

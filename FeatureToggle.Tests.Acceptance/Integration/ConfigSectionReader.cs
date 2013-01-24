@@ -21,7 +21,6 @@ namespace FeatureToggle.Tests.Acceptance
         {
             try
             {
-
                 var config = Configuration.GetSection(section) as T;
                 return config;
             }
