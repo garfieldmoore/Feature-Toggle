@@ -18,7 +18,7 @@ namespace Ef.CodeFirstConfig
         {
             BootStrapper();
 
-            if (Features.IsAvailable("Feature001"))
+            if (Features.IsAvailable("Entity Framework"))
             {
                 Console.WriteLine("Entity framework is enabled.");
             }
