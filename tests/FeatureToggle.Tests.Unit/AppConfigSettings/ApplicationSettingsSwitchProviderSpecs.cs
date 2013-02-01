@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
-using Moq;
 using NSubstitute;
 using NUnit.Framework;
 using Rainbow.Wrappers.Configuration;
 using Toggles.Configuration;
 using Toggles.Configuration.Providers;
 using Toggles.Configuration.Providers.ApplicationSettings;
-using Toggles.Configuration.Providers.ConfigurationSection;
-using Shouldly;
 
 namespace FeatureToggle.Tests.Unit
 {
