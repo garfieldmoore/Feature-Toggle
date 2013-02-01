@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler.Demo", "FeatureToggle.Demo\Toggler.Demo.csproj", "{64980F0C-A597-4726-950B-52BB0FFC97B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler.Demo", "source\FeatureToggle.Demo\Toggler.Demo.csproj", "{64980F0C-A597-4726-950B-52BB0FFC97B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggler", "source\Toggler\Toggler.csproj", "{F36FB021-6553-438E-A1F1-35A774C4EA5D}"
 EndProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35160C
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Tests.Acceptance", "FeatureToggle.Tests.Acceptance\FeatureToggle.Tests.Acceptance.csproj", "{601B7923-418D-411C-A635-329EE899D71A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Tests.Acceptance", "tests\FeatureToggle.Tests.Acceptance\FeatureToggle.Tests.Acceptance.csproj", "{601B7923-418D-411C-A635-329EE899D71A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rainbow.wrappers", "rainbow.wrappers\rainbow.wrappers.csproj", "{D346B1BB-77D7-430F-AE64-099B26D36E10}"
 EndProject
