@@ -1,7 +1,9 @@
-﻿namespace Toggles.Configuration
+﻿using System.Collections.Generic;
+
+namespace Toggles.Configuration
 {
     public interface IFeatureMapper<T>
     {
-        Feature Map(T objectToMap);
+        List<Feature> Map(T objectToMap);
     }
 }

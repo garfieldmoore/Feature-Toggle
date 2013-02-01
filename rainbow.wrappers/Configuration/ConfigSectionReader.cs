@@ -1,13 +1,14 @@
-﻿using System;
+﻿
+using System;
 using System.Configuration;
 
-namespace FeatureToggle.Tests.Acceptance
+namespace Rainbow.Wrappers.Configuration
 {
     public class ConfigSectionReader : IConfigurationReader
     {
-        protected static Configuration Configuration;
+        protected static System.Configuration.Configuration Configuration;
 
-        public ConfigSectionReader(Configuration configuration)
+        public ConfigSectionReader(System.Configuration.Configuration configuration)
         {
             Configuration = configuration;
         }

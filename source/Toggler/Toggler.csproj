@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>strongname.snk</AssemblyOriginatorKeyFile>
@@ -48,13 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigExtensions.cs" />
     <Compile Include="IFeatureMapper.cs" />
-    <Compile Include="Providers\ApplicationSettingsProvider.cs" />
+    <Compile Include="Providers\ApplicationSettingsSwitchProvider.cs" />
     <Compile Include="Factories\ApplicationSettingsProviderFactory.cs" />
-    <Compile Include="Providers\ConfigurationSectionProvider.cs" />
+    <Compile Include="Providers\ConfigurationSectionSwitchProvider.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="Factories\ConfigurationSectionSwitchProviderFactory.cs" />
-    <Compile Include="Providers\ConfigurationSection\ApplicationFeatureMapper.cs" />
+    <Compile Include="Providers\ApplicationSettings\KeyValueFeatureMapper.cs" />
     <Compile Include="Providers\ConfigurationSection\ConfigurationFeatureMapper.cs" />
     <Compile Include="Providers\ConfigurationSection\Feature.cs" />
     <Compile Include="Providers\ConfigurationSection\FeatureConfiguration.cs" />
@@ -77,7 +78,12 @@
     </Content>
     <None Include="strongname.snk" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\rainbow.wrappers\rainbow.wrappers.csproj">
+      <Project>{d346b1bb-77d7-430f-ae64-099b26d36e10}</Project>
+      <Name>rainbow.wrappers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Linq;
 using NUnit.Framework;
+using Rainbow.Wrappers.Configuration;
 using Shouldly;
 using Toggles.Configuration;
 using Toggles.Configuration.Providers.ConfigurationSection;

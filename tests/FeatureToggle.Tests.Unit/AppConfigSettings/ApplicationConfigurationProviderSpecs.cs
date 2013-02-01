@@ -1,27 +1,41 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
+using NSubstitute;
 using NUnit.Framework;
+using Rainbow.Wrappers.Configuration;
 using Toggles.Configuration;
-using Toggles.Configuration.Factories;
 using Toggles.Configuration.Providers;
 using Shouldly;
+using Toggles.Configuration.Providers.ApplicationSettings;
 
 namespace FeatureToggle.Tests.Unit
 {
     [TestFixture]
     public class ApplicationConfigurationProviderSpecs
     {
-        private static Dictionary<string, Feature> _toggles;
         private static ApplicationSettingsSwitchProvider _configProvider;
+        private IApplicationSettings _configReader;
+        private KeyValueFeatureMapper _mapper;
 
         [Test]
-        public void Should_read_from_applicaiton_settings()
+        public void Should_invoke_application_settings_reader()
         {
             Given_a_application_settings_provider();
 
-            var switches = _configProvider.ReadConfiguration();
-            switches.Count.ShouldBe(1);
-            switches["Feature001"].State.ShouldBe(true);
+            _configProvider.ReadConfiguration();
+            _configReader.Received(1).LoadSettings();
+        }
+
+        [Test]
+        public void Should_invoke_mapper_with_reader_results()
+        {
+            Given_a_application_settings_provider();
+
+            var keyValueConfigurationCollection = new KeyValueConfigurationCollection();
+            _configReader.LoadSettings().Returns(keyValueConfigurationCollection);
+            _configProvider.ReadConfiguration();
+            _mapper.Received(1).Map(keyValueConfigurationCollection);
+
         }
 
         [Test]
@@ -31,16 +45,15 @@ namespace FeatureToggle.Tests.Unit
             
             _configProvider.ReadConfiguration();
             _configProvider.IsAvaliable("Feature001").ShouldBe(true);
-
-
         }
 
         private void Given_a_application_settings_provider()
-        {
-            var fileMap = new ConfigurationFileMap(@"TestData\appSettings.config");
-            var configuration = ConfigurationManager.OpenMappedMachineConfiguration(fileMap);
-
-            _configProvider = new ApplicationSettingsSwitchProvider();
+        {           
+            _configReader = Substitute.For<IApplicationSettings>();
+            _configReader.LoadSettings().Returns(new KeyValueConfigurationCollection());
+            _mapper = Substitute.For<KeyValueFeatureMapper>();
+            _mapper.Map(Arg.Any<KeyValueConfigurationCollection>()).Returns(new List<Feature>(){new Feature(){Name = "Feature001", State = true}});
+            _configProvider = new ApplicationSettingsSwitchProvider(_configReader, _mapper);
         }
     }
 }

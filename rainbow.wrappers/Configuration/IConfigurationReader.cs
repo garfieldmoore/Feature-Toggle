@@ -1,4 +1,4 @@
-﻿namespace FeatureToggle.Tests.Acceptance
+﻿namespace Rainbow.Wrappers.Configuration
 {
     public interface IConfigurationReader
     {

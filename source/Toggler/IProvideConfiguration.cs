@@ -5,6 +5,6 @@ namespace Toggles.Configuration
 {
     public interface IProvideConfiguration
     {
-        Dictionary<string, Feature> ReadConfiguration();
+        IDictionary<string, Feature> ReadConfiguration();
     }
 }

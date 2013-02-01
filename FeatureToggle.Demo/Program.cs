@@ -1,17 +1,15 @@
 ﻿using Toggles.Configuration;
 using Toggles.Configuration.Factories;
-using Toggles.Configuration.Providers.ConfigurationSection;
+using System;
 
-namespace Ef.CodeFirstConfig
+namespace FeatureSwitch.Demo
 {
-    using System;
-    using System.Diagnostics;
-
     internal class Program
     {
         public static void BootStrapper()
         {
-            Features.Initialize(new ConfigurationSectionSwitchProviderFactory());    
+            // doesn't need to be initialised if you want to use the default
+            //Features.Initialize(new ConfigurationSectionSwitchProviderFactory());    
         }
 
         private static void Main(string[] args)

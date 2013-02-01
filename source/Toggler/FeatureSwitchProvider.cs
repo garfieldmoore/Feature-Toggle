@@ -6,9 +6,9 @@ namespace Toggles.Configuration
     public abstract class FeatureSwitchProvider : IProvideConfiguration, ISwitch
     {
         protected System.Configuration.Configuration ConfigManager;
-        protected Dictionary<string, Feature> FeatureSwitches;
+        protected IDictionary<string, Feature> FeatureSwitches;
 
-        public abstract Dictionary<string, Feature> ReadConfiguration();
+        public abstract IDictionary<string, Feature> ReadConfiguration();
 
         public virtual bool IsAvaliable(string featureName)
         {

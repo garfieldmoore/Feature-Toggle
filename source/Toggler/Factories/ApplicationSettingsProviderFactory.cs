@@ -1,4 +1,7 @@
-﻿using Toggles.Configuration.Providers;
+﻿using Rainbow.Wrappers.Configuration;
+using Toggles.Configuration.Providers;
+using Toggles.Configuration.Providers.ApplicationSettings;
+using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration.Factories
 {
@@ -6,7 +9,7 @@ namespace Toggles.Configuration.Factories
     {
         public ISwitch Create()
         {
-            var provider = new ApplicationSettingsSwitchProvider();
+            var provider = new ApplicationSettingsSwitchProvider(new ApplicationSettingsReader(), new KeyValueFeatureMapper());
             provider.ReadConfiguration();
 
             return provider;
