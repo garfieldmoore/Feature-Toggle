@@ -75,11 +75,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\rainbow.wrappers\rainbow.wrappers.csproj">
+    <ProjectReference Include="..\..\rainbow.wrappers\rainbow.wrappers.csproj">
       <Project>{d346b1bb-77d7-430f-ae64-099b26d36e10}</Project>
       <Name>rainbow.wrappers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\source\Toggler\Toggler.csproj">
+    <ProjectReference Include="..\..\source\Toggler\Toggler.csproj">
       <Project>{f36fb021-6553-438e-a1f1-35a774c4ea5d}</Project>
       <Name>Toggler</Name>
     </ProjectReference>
