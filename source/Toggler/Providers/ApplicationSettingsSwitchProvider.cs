@@ -1,5 +1,6 @@
 ﻿using Rainbow.Wrappers.Configuration;
 using Toggles.Configuration.Providers.ApplicationSettings;
+using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration.Providers
 {
@@ -16,7 +17,7 @@ namespace Toggles.Configuration.Providers
             _mapper= new KeyValueFeatureMapper();
         }
        
-        public ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper):this(mapper)
+        internal ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper):this(mapper)
         {
             _reader = configReader;
             _mapper = mapper;
@@ -31,12 +32,7 @@ namespace Toggles.Configuration.Providers
         {
             FeatureSwitches = new Dictionary<string, Feature>();
 
-            var features = _mapper.Map(_reader.LoadSettings());
-
-            foreach (Feature feature in features)
-            {
-                FeatureSwitches.Add(feature.Name, feature);
-            }
+            FeatureSwitches = _mapper.Map(_reader.LoadSettings()).ToDictionary();
 
             return FeatureSwitches;
         }

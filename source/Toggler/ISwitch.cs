@@ -2,6 +2,6 @@
 {
     public interface ISwitch
     {
-        bool IsAvaliable(string switchName);
+        bool IsAvailable(string switchName);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Toggles.Configuration
 {
-    public interface IFeatureMapper<T>
+    internal interface IFeatureMapper<T>
     {
         List<Feature> Map(T objectToMap);
     }

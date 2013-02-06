@@ -9,7 +9,7 @@ namespace Toggles.Configuration
 
         public static bool IsAvailable(string featureName)
         {
-            return  _switchProviderFactory.Create().IsAvaliable(featureName);
+            return  _switchProviderFactory.Create().IsAvailable(featureName);
         }
 
         /// <summary>

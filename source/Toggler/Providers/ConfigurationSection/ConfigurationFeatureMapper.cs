@@ -2,7 +2,7 @@
 
 namespace Toggles.Configuration.Providers.ConfigurationSection
 {
-    public class ConfigurationFeatureMapper : IFeatureMapper<FeaturesCollection>
+    internal class ConfigurationFeatureMapper : IFeatureMapper<FeaturesCollection>
     {
         public virtual List<Feature> Map(FeaturesCollection featuresCollection)
         {
@@ -13,20 +13,5 @@ namespace Toggles.Configuration.Providers.ConfigurationSection
             }
             return features;
         }
-    }
-
-    public static class ConfigurationExtensions
-    {
-        public static IDictionary<string, Feature> ToDictionary(this IEnumerable<Feature> features)
-        {
-            var featureList = new Dictionary<string, Feature>();
-            foreach (var featureSwitch in features)
-            {
-                featureList.Add(featureSwitch.Name, featureSwitch);
-            }
-
-            return featureList;
-        }
-
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Toggles.Configuration.Providers.ConfigurationSection
 {
-    public class FeatureElement : ConfigurationElement
+    internal class FeatureElement : ConfigurationElement
     {
         [ConfigurationProperty("name", IsRequired = true)]
         public string Name

@@ -17,7 +17,7 @@ namespace FeatureToggle.Tests.Acceptance
             Features.IsAvailable("FeatureB").ShouldBe(false);
         }
 
-        [Test]
+        [Test, Ignore]
         public void Should_Evaluate_dependant_features()
         {
             GivenAFeaturesGatewayInitializedWithConfigurationSectionSwitchProvider();

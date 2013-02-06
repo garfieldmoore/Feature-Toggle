@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Toggles.Configuration.Providers.ApplicationSettings
 {
-    public class KeyValueFeatureMapper : IFeatureMapper<KeyValueConfigurationCollection>
+    internal class KeyValueFeatureMapper : IFeatureMapper<KeyValueConfigurationCollection>
     {
         public virtual List<Feature> Map(KeyValueConfigurationCollection keyValueConfigurationCollection)
         {

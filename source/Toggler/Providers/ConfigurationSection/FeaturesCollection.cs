@@ -2,7 +2,7 @@ using System.Configuration;
 
 namespace Toggles.Configuration.Providers.ConfigurationSection
 {
-    public class FeaturesCollection: ConfigurationElementCollection
+    internal class FeaturesCollection: ConfigurationElementCollection
     {
         protected override ConfigurationElement CreateNewElement()
         {

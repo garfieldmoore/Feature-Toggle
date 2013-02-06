@@ -27,10 +27,10 @@ namespace FeatureToggle.Tests.Unit
         {
             Given_a_switch_factory_with_a_switch_initialised();
 
-            _switcher.IsAvaliable("MyFeature").Returns(true);
+            _switcher.IsAvailable("MyFeature").Returns(true);
             var result = Features.IsAvailable("MyFeature");
 
-            _switcher.Received(1).IsAvaliable("MyFeature");
+            _switcher.Received(1).IsAvailable("MyFeature");
            result.ShouldBe(true);
         }
 

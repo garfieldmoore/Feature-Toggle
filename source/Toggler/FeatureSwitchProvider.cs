@@ -10,7 +10,7 @@ namespace Toggles.Configuration
 
         public abstract IDictionary<string, Feature> ReadConfiguration();
 
-        public virtual bool IsAvaliable(string featureName)
+        public virtual bool IsAvailable(string featureName)
         {
             try
             {

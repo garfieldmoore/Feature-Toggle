@@ -33,7 +33,7 @@ namespace FeatureToggle.Tests.Unit
 
             var keyValueConfigurationCollection = new KeyValueConfigurationCollection();
             _configReader.LoadSettings().Returns(keyValueConfigurationCollection);
-            _configProvider.ReadConfiguration();
+             _configProvider.ReadConfiguration();
             _mapper.Received(1).Map(keyValueConfigurationCollection);
 
         }
@@ -44,7 +44,7 @@ namespace FeatureToggle.Tests.Unit
             Given_a_application_settings_provider();
             
             _configProvider.ReadConfiguration();
-            _configProvider.IsAvaliable("Feature001").ShouldBe(true);
+            _configProvider.IsAvailable("Feature001").ShouldBe(true);
         }
 
         private void Given_a_application_settings_provider()

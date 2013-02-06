@@ -9,6 +9,7 @@ namespace Toggles.Configuration.Factories
         public ISwitch Create()
         {
             var config = new ConfigurationSectionSwitchProvider(new ConfigSectionReader(), new ConfigurationFeatureMapper());            
+           
             config.ReadConfiguration();
 
             return config;

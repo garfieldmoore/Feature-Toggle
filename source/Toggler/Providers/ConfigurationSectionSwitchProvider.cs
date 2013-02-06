@@ -13,7 +13,7 @@ namespace Toggles.Configuration.Providers
         private readonly ConfigurationFeatureMapper _mapper;
         private static FeatureConfiguration _config;
 
-        public ConfigurationSectionSwitchProvider(IConfigurationReader configurationReader, ConfigurationFeatureMapper mapper)
+        internal ConfigurationSectionSwitchProvider(IConfigurationReader configurationReader, ConfigurationFeatureMapper mapper)
         {
             _configurationReader = configurationReader;
             _mapper = mapper;
@@ -21,10 +21,10 @@ namespace Toggles.Configuration.Providers
 
         public ConfigurationSectionSwitchProvider()
         {
-            _configurationReader = new ConfigSectionReader();
+            _configurationReader = new ConfigSectionReader();            
         }
 
-        public void LoadConfiguration()
+        internal void LoadConfiguration()
         {
             try
             {

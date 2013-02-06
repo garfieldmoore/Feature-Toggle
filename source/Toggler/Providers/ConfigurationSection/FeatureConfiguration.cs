@@ -3,7 +3,7 @@ using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration
 {
-    public class FeatureConfiguration : ConfigurationSection
+    internal class FeatureConfiguration : ConfigurationSection
     {
         public static readonly string SectionName = "FeatureConfiguration";
 
