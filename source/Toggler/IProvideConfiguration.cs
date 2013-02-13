@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration
 {

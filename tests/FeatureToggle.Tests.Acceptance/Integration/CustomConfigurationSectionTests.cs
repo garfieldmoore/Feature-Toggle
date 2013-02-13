@@ -6,7 +6,7 @@ using Shouldly;
 using Toggles.Configuration;
 using Toggles.Configuration.Providers.ConfigurationSection;
 
-namespace FeatureToggle.Tests.Acceptance
+namespace FeatureToggle.Tests.Acceptance.Integration
 {
     [TestFixture]
     public class CustomConfigurationSectionTests

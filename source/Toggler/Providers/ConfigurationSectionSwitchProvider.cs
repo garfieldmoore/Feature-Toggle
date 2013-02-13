@@ -5,7 +5,6 @@ namespace Toggles.Configuration.Providers
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
 
     public class ConfigurationSectionSwitchProvider : FeatureSwitchProvider
     {

@@ -1,9 +1,8 @@
-﻿using System.Configuration;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Rainbow.Wrappers.Configuration;
 using Shouldly;
 
-namespace FeatureToggle.Tests.Acceptance
+namespace FeatureToggle.Tests.Acceptance.Integration
 {
     [TestFixture]
     public class ApplicationSettingsTests

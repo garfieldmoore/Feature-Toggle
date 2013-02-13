@@ -1,9 +1,8 @@
 using System.Configuration;
-using Toggles.Configuration.Providers.ConfigurationSection;
 
-namespace Toggles.Configuration
+namespace Toggles.Configuration.Providers.ConfigurationSection
 {
-    internal class FeatureConfiguration : ConfigurationSection
+    internal class FeatureConfiguration : System.Configuration.ConfigurationSection
     {
         public static readonly string SectionName = "FeatureConfiguration";
 

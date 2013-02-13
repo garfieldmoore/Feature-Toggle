@@ -1,6 +1,5 @@
 ﻿using Rainbow.Wrappers.Configuration;
 using Toggles.Configuration.Providers.ApplicationSettings;
-using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration.Providers
 {
