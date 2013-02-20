@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Toggles.Configuration
+namespace Toggles.Configuration.Interfaces
 {
     public interface IProvideConfiguration
     {

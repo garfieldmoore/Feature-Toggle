@@ -1,4 +1,5 @@
 ﻿using Rainbow.Wrappers.Configuration;
+using Toggles.Configuration.Interfaces;
 using Toggles.Configuration.Providers;
 using Toggles.Configuration.Providers.ConfigurationSection;
 

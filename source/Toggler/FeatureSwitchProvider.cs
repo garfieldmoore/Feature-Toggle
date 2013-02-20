@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration
 {

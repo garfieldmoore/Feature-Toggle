@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
+using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration.Providers.ApplicationSettings
 {

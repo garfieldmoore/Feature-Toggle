@@ -1,4 +1,5 @@
 ﻿using NSubstitute;
+using Toggles.Configuration.Interfaces;
 
 namespace FeatureToggle.Tests.Unit
 {

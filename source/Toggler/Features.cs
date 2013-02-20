@@ -1,3 +1,5 @@
+using Toggles.Configuration.Interfaces;
+
 namespace Toggles.Configuration
 {
     using System;

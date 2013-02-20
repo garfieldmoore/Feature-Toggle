@@ -1,4 +1,4 @@
-﻿namespace Toggles.Configuration
+﻿namespace Toggles.Configuration.Interfaces
 {
     public interface ISwitch
     {
