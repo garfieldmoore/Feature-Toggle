@@ -1,6 +1,6 @@
 ﻿<configuration>
   <configSections>
-    <section name="FeatureConfiguration" type="Toggles.Configuration.FeatureConfiguration, Toggler" />
+    <section name="FeatureConfiguration" type="Toggles.Configuration.Providers.ConfigurationSection.FeatureConfiguration, Toggler" />
   </configSections>
 
   <FeatureConfiguration>
