@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigExtensions.cs" />
-    <Compile Include="IFeatureMapper.cs" />
+    <Compile Include="Interfaces\IFeatureMapper.cs" />
     <Compile Include="Providers\ApplicationSettingsSwitchProvider.cs" />
     <Compile Include="Factories\ApplicationSettingsProviderFactory.cs" />
     <Compile Include="Providers\ConfigurationSectionSwitchProvider.cs" />
@@ -61,10 +61,10 @@
     <Compile Include="Providers\ConfigurationSection\FeatureConfiguration.cs" />
     <Compile Include="Features.cs" />
     <Compile Include="Providers\ConfigurationSection\FeaturesCollection.cs" />
-    <Compile Include="ISwitch.cs" />
-    <Compile Include="ISwitchProviderFactory.cs" />
+    <Compile Include="Interfaces\ISwitch.cs" />
+    <Compile Include="Interfaces\ISwitchProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IProvideConfiguration.cs" />
+    <Compile Include="Interfaces\IProvideConfiguration.cs" />
     <Compile Include="FeatureSwitchProvider.cs" />
   </ItemGroup>
   <ItemGroup>
