@@ -12,7 +12,7 @@ namespace FeatureToggle.Tests.Acceptance.Integration
         [Test]
         public void Should_Load_settings()
         {
-            Given_a_configuration_reader_from_file(@"Integration\TestData\App.config");
+            Given_a_configuration_reader_from_file();
             var features = _configProvider.LoadSettings();
 
             var keys = features.AllKeys;
@@ -20,7 +20,7 @@ namespace FeatureToggle.Tests.Acceptance.Integration
             keys[0].ShouldBe("FeatureD");
         }
 
-        private static void Given_a_configuration_reader_from_file(string filePath)
+        private static void Given_a_configuration_reader_from_file()
         {
             _configProvider = new ApplicationSettingsReader();
 

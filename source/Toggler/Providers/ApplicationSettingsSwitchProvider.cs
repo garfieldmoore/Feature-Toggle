@@ -29,8 +29,6 @@ namespace Toggles.Configuration.Providers
 
         public override IDictionary<string, Feature> ReadConfiguration()
         {
-            FeatureSwitches = new Dictionary<string, Feature>();
-
             FeatureSwitches = _mapper.Map(_reader.LoadSettings()).ToDictionary();
 
             return FeatureSwitches;

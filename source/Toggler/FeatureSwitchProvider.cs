@@ -11,6 +11,11 @@ namespace Toggles.Configuration
 
         public abstract IDictionary<string, Feature> ReadConfiguration();
 
+        protected FeatureSwitchProvider()
+        {
+            FeatureSwitches = new Dictionary<string, Feature>();
+        }
+
         public virtual bool IsAvailable(string featureName)
         {
             try

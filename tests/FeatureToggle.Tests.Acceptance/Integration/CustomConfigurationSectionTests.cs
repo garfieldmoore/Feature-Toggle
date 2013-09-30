@@ -18,7 +18,7 @@ namespace FeatureToggle.Tests.Acceptance.Integration
         {
             Given_a_configuration_reader_from_file(@"Integration\TestData\KeyNamePair.config");
 
-            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).ToList<FeatureElement>();                       
+            var features = _configProvider.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).ToList<FeatureElement>();
 
             features.Count.ShouldBe(1);
             features.FirstOrDefault().Name.ShouldBe("Feature001");
