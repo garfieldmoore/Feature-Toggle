@@ -15,8 +15,8 @@
     </dependencies>
   </metadata>
    <files>
-        <file src="buildArtifacts\bin\components\Toggler.dll" target="lib\net35\Toggler.dll" />
-		<file src="buildArtifacts\bin\components\rainbow.wrappers.dll" target="lib\net35\rainbow.wrappers.dll" />
-        <file src="buildArtifacts\bin\components\App.config.transform" target="content\App.config.transform" />
+        <file src="source\Toggler\bin\Release\Toggler.dll" target="lib\net35\Toggler.dll" />
+		<file src="source\Toggler\bin\Release\rainbow.wrappers.dll" target="lib\net35\rainbow.wrappers.dll" />
+        <file src="source\Toggler\bin\Release\App.config.transform" target="content\App.config.transform" />
     </files>
 </package>
