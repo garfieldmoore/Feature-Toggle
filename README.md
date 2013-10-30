@@ -5,7 +5,7 @@ Toggler provides a minimum feature toggling API that allows extension.  The fram
 
 The example below extends the framework to provide an in-memory configuration provider.  This made is easier to unit test!
 
-'''
+
     public class ExtendingToggler
     {
         [Test]
@@ -34,4 +34,3 @@ The example below extends the framework to provide an in-memory configuration pr
             FeatureSwitches.Add("Feature2", new Feature() { Name = "Feature1", State = false });
         }
     }
-'''
