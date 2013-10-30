@@ -1,6 +1,5 @@
 ﻿namespace FeatureToggle.Tests.Acceptance
 {
-    using System.Collections.Generic;
     using NUnit.Framework;
     using Shouldly;
     using Toggles.Configuration;
@@ -16,7 +15,6 @@
             Features.IsAvailable("Feature1").ShouldBe(true);
             Features.IsAvailable("Feature2").ShouldBe(false);
         }
-
     }
 
     public class InMemorySwitchProviderFactory : ISwitchProviderFactory
@@ -29,6 +27,8 @@
 
     public class InMemorySwitchProvider : FeatureSwitchProvider
     {
+        private bool hasLoaded;
+
         public override void ReadConfiguration()
         {
             FeatureSwitches.Add("Feature1", new Feature() { Name = "Feature1", State = true });
