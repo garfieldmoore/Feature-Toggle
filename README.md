@@ -6,7 +6,7 @@ Toggler provides a minimum, and friction free feature toggling API.
 
 To get started simply add the package to your application;
 
-  install-package toggler.net
+      install-package toggler.net
 
 This will add the below configuration section to your app.config;
 
