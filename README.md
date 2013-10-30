@@ -1,10 +1,42 @@
 Feature-Toggle
 ==============
 
-Toggler provides a minimum feature toggling API that allows extension.  The framework allows developers to add custom feature configuration providers.
+Toggler provides a minimum, and friction free feature toggling API. 
 
+The framework provides a default configuration provider so it's easy to get started;
+
+Simply add the package to your application;
+
+  install-package toggler.net
+
+This will add the below configuration section to your app.config;
+
+      <configSections>
+        <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+        <section name="FeatureConfiguration" type="Toggles.Configuration.Providers.ConfigurationSection.FeatureConfiguration, Toggler" />
+      </configSections>
+
+      <FeatureConfiguration>
+        <Features>
+          <add name="FeatureA" isAvailable="true"/>
+          <add name="FeatureB" isAvailable="false"/>
+          <add name="FeatureC" isAvailable="true" DependsOn="FeatureB"/>
+        </Features>
+      </FeatureConfiguration>
+
+Now you can start toggling features;
+
+      if (Features.IsAvailable("FeatureA"))
+      {
+          // Do something useful
+          Console.WriteLine("FeatureA is enabled.");
+      }
+
+_However, one of the principles behind toggler is extensibility..._
+
+Extending Toggler
+-----------------
 The example below extends the framework to provide an in-memory configuration provider.  This made is easier to unit test!
-
 
     public class ExtendingToggler
     {
