@@ -3,20 +3,21 @@ using Toggles.Configuration.Providers.ApplicationSettings;
 
 namespace Toggles.Configuration.Providers
 {
-    using System.Collections.Generic;
     using System.Configuration;
 
-    public class ApplicationSettingsSwitchProvider : FeatureSwitchProvider   
+    public class ApplicationSettingsSwitchProvider : FeatureSwitchProvider
     {
         private readonly KeyValueFeatureMapper _mapper;
         private IApplicationSettings _reader;
+
         public ApplicationSettingsSwitchProvider()
         {
             ConfigManager = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            _mapper= new KeyValueFeatureMapper();
+            _mapper = new KeyValueFeatureMapper();
         }
-       
-        internal ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper):this(mapper)
+
+        internal ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper)
+            : this(mapper)
         {
             _reader = configReader;
             _mapper = mapper;
@@ -27,11 +28,9 @@ namespace Toggles.Configuration.Providers
             _mapper = mapper;
         }
 
-        public override IDictionary<string, Feature> ReadConfiguration()
+        public override void ReadConfiguration()
         {
             FeatureSwitches = _mapper.Map(_reader.LoadSettings()).ToDictionary();
-
-            return FeatureSwitches;
         }
     }
 }

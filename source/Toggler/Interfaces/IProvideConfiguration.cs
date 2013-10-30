@@ -2,8 +2,9 @@
 
 namespace Toggles.Configuration.Interfaces
 {
-    public interface IProvideConfiguration
+    internal interface IProvideConfiguration
     {
+        // TODO: make return type void
         IDictionary<string, Feature> ReadConfiguration();
     }
 }

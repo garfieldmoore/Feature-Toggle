@@ -4,7 +4,6 @@ using Toggles.Configuration.Providers.ConfigurationSection;
 namespace Toggles.Configuration.Providers
 {
     using System;
-    using System.Collections.Generic;
 
     public class ConfigurationSectionSwitchProvider : FeatureSwitchProvider
     {
@@ -12,6 +11,7 @@ namespace Toggles.Configuration.Providers
         private readonly ConfigurationFeatureMapper _mapper;
         private static FeatureConfiguration _config;
 
+        // TODO: put this on abstract class so it needs to be implemented in factory
         internal ConfigurationSectionSwitchProvider(IConfigurationReader configurationReader, ConfigurationFeatureMapper mapper)
         {
             _configurationReader = configurationReader;
@@ -20,7 +20,7 @@ namespace Toggles.Configuration.Providers
 
         public ConfigurationSectionSwitchProvider()
         {
-            _configurationReader = new ConfigSectionReader();            
+            _configurationReader = new ConfigSectionReader();
         }
 
         internal void LoadConfiguration()
@@ -35,26 +35,11 @@ namespace Toggles.Configuration.Providers
             }
         }
 
-        public override IDictionary<string, Feature> ReadConfiguration()
+        public override void ReadConfiguration()
         {
             LoadConfiguration();
 
             FeatureSwitches = _mapper.Map(_config.Features).ToDictionary();
-
-            return FeatureSwitches;
-        }
-
-        private Feature GetDependentSwitch(FeatureElement toggle, Feature switch1)
-        {
-            try
-            {
-                var dependency = FeatureSwitches[toggle.DependsOn];
-                return dependency;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
         }
     }
 }

@@ -4,12 +4,12 @@ using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration
 {
-    public abstract class FeatureSwitchProvider : IProvideConfiguration, ISwitch
+    public abstract class FeatureSwitchProvider : IProvideSwitches
     {
         protected System.Configuration.Configuration ConfigManager;
-        protected IDictionary<string, Feature> FeatureSwitches;
+        internal IDictionary<string, Feature> FeatureSwitches;
 
-        public abstract IDictionary<string, Feature> ReadConfiguration();
+        public abstract void ReadConfiguration();
 
         protected FeatureSwitchProvider()
         {
@@ -24,11 +24,12 @@ namespace Toggles.Configuration
                 {
                     return FeatureSwitches[featureName].State && FeatureSwitches[featureName].DependsOn.State;
                 }
-                
+
                 return FeatureSwitches[featureName].State;
             }
             catch (Exception e)
             {
+                // TODO: create custom exception
                 throw new Exception("Unknown feature toggle");
             }
         }

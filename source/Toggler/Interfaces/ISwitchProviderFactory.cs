@@ -2,6 +2,6 @@
 {
     public interface ISwitchProviderFactory
     {
-        ISwitch Create();
+        IProvideSwitches Create();
     }
 }

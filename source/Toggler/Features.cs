@@ -7,11 +7,16 @@ namespace Toggles.Configuration
 
     public class Features
     {
-        private static ISwitchProviderFactory _switchProviderFactory = new ConfigurationSectionSwitchProviderFactory();
+        private static ISwitchProviderFactory switchProviderFactory = new ConfigurationSectionSwitchProviderFactory();
+
+        private static IProvideSwitches switchProvider;
 
         public static bool IsAvailable(string featureName)
         {
-            return  _switchProviderFactory.Create().IsAvailable(featureName);
+            switchProvider = switchProviderFactory.Create();
+            switchProvider.ReadConfiguration();
+
+            return switchProvider.IsAvailable(featureName);
         }
 
         /// <summary>
@@ -24,7 +29,7 @@ namespace Toggles.Configuration
         {
             if (factory == null) throw new ArgumentNullException("factory");
 
-            _switchProviderFactory = factory;
+            switchProviderFactory = factory;
         }
     }
 }

@@ -8,10 +8,9 @@ namespace Toggles.Configuration.Factories
 {
     public class ApplicationSettingsSwitchProviderFactory : ISwitchProviderFactory
     {
-        public ISwitch Create()
+        public IProvideSwitches Create()
         {
             var provider = new ApplicationSettingsSwitchProvider(new ApplicationSettingsReader(), new KeyValueFeatureMapper());
-            provider.ReadConfiguration();
 
             return provider;
         }

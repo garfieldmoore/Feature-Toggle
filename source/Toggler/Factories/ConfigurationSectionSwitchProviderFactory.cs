@@ -7,11 +7,9 @@ namespace Toggles.Configuration.Factories
 {
     public class ConfigurationSectionSwitchProviderFactory : ISwitchProviderFactory
     {
-        public ISwitch Create()
+        public IProvideSwitches Create()
         {
-            var config = new ConfigurationSectionSwitchProvider(new ConfigSectionReader(), new ConfigurationFeatureMapper());            
-           
-            config.ReadConfiguration();
+            var config = new ConfigurationSectionSwitchProvider(new ConfigSectionReader(), new ConfigurationFeatureMapper());
 
             return config;
         }

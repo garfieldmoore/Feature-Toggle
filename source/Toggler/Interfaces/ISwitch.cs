@@ -1,7 +1,10 @@
 ﻿namespace Toggles.Configuration.Interfaces
 {
-    public interface ISwitch
+    using System.Collections.Generic;
+
+    public interface IProvideSwitches
     {
         bool IsAvailable(string switchName);
+        void ReadConfiguration();
     }
 }

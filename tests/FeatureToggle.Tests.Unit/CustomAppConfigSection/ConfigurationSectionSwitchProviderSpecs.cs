@@ -2,10 +2,10 @@
 using NSubstitute;
 using NUnit.Framework;
 using Rainbow.Wrappers.Configuration;
+using Shouldly;
 using Toggles.Configuration;
 using Toggles.Configuration.Providers;
 using Toggles.Configuration.Providers.ConfigurationSection;
-using Shouldly;
 
 namespace FeatureToggle.Tests.Unit
 {
@@ -21,7 +21,7 @@ namespace FeatureToggle.Tests.Unit
         public void LoadConfiguration_invokes_configuration_reader()
         {
             Given_a_configuration_provider_with_toggles_configured();
-            
+
             _configProvider.LoadConfiguration();
             _mockReader.Received().LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName);
         }
@@ -32,9 +32,9 @@ namespace FeatureToggle.Tests.Unit
             Given_a_configuration_provider_with_toggles_configured();
             _mapper.Map(Arg.Any<FeaturesCollection>()).Returns(new List<Feature>());
             _mockReader.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).Returns(new FeatureConfiguration());
-            
+
             _configProvider.ReadConfiguration();
-            
+
             _mapper.Received(1).Map(Arg.Any<FeaturesCollection>());
 
         }
@@ -65,7 +65,9 @@ namespace FeatureToggle.Tests.Unit
         public void ReadConfiguration_returns_mapped_feature_toggles()
         {
             Given_a_configuration_provider_with_a_reader();
-            var toggles = _configProvider.ReadConfiguration();
+            _configProvider.ReadConfiguration();
+
+            var toggles = _configProvider.FeatureSwitches;
             toggles.ContainsKey("Feature001").ShouldBe(true);
             toggles.Values.ShouldContain(_mappedFeatures[0]);
         }
@@ -74,7 +76,7 @@ namespace FeatureToggle.Tests.Unit
         private void Given_a_configuration_provider_with_a_reader()
         {
             Given_a_configuration_provider_with_toggles_configured();
-            _mappedFeatures = new List<Feature>(){new Feature(){Name="Feature001", State=true}};
+            _mappedFeatures = new List<Feature>() { new Feature() { Name = "Feature001", State = true } };
             _mapper.Map(Arg.Any<FeaturesCollection>()).Returns(_mappedFeatures);
             _mockReader.LoadConfiguration<FeatureConfiguration>(FeatureConfiguration.SectionName).Returns(new FeatureConfiguration());
         }
@@ -84,7 +86,7 @@ namespace FeatureToggle.Tests.Unit
         {
             _mockReader = Substitute.For<IConfigurationReader>();
             _mapper = Substitute.For<ConfigurationFeatureMapper>();
-            
+
             _configProvider = new ConfigurationSectionSwitchProvider(_mockReader, _mapper);
         }
     }
