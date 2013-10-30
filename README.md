@@ -3,9 +3,8 @@ Feature-Toggle
 
 Toggler provides a minimum, and friction free feature toggling API. 
 
-The framework provides a default configuration provider so it's easy to get started;
 
-Simply add the package to your application;
+To get started simply add the package to your application;
 
   install-package toggler.net
 
