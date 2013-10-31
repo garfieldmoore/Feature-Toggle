@@ -35,6 +35,29 @@ _However, one of the principles behind toggler is extensibility..._
 
 Extending Toggler
 -----------------
+
+_Removing magic strings_
+
+Defining extension methods on the Features class reduces duplication;
+
+    internal static class ToggleExtensions
+    {
+        public static bool IsMyNewFeatureEnabled(this Features features)
+        {
+            return Features.IsAvailable("FeatureA");
+        }
+    }
+
+Now I can check what features are enabled;
+
+    var features = new Features();
+    if (features.IsMyNewFeatureEnabled())
+    {
+        Console.WriteLine("My new Feature is enabled.");                
+    }
+
+_Using different providers_
+
 The example below extends the framework to provide an in-memory configuration provider.  This made is easier to unit test!
 
     public class ExtendingToggler
@@ -65,3 +88,4 @@ The example below extends the framework to provide an in-memory configuration pr
             FeatureSwitches.Add("Feature2", new Feature() { Name = "Feature1", State = false });
         }
     }
+
