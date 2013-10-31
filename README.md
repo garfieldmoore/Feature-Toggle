@@ -36,7 +36,7 @@ _However, one of the principles behind toggler is extensibility..._
 Extending Toggler
 -----------------
 
-_Removing magic strings_
+### Removing magic strings
 
 Defining extension methods on the Features class reduces duplication;
 
@@ -56,7 +56,7 @@ Now I can check what features are enabled;
         Console.WriteLine("My new Feature is enabled.");                
     }
 
-_Using different providers_
+### Using different providers
 
 The example below extends the framework to provide an in-memory configuration provider.  This made is easier to unit test!
 
