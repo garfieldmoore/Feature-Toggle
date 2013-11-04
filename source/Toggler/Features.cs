@@ -1,11 +1,11 @@
-using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration
 {
     using System;
     using Factories;
+    using Toggles.Configuration.Interfaces;
 
-    public class Features
+    public sealed class Features
     {
         private static ISwitchProviderFactory switchProviderFactory = new ConfigurationSectionSwitchProviderFactory();
 

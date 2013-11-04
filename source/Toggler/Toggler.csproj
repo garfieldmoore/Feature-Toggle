@@ -67,6 +67,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IProvideConfiguration.cs" />
     <Compile Include="FeatureSwitchProvider.cs" />
+    <Compile Include="Providers\InMemory\InMemorySwitchProvider.cs" />
+    <Compile Include="Providers\InMemory\InMemorySwitchProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config.transform">

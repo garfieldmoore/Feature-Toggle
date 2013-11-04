@@ -57,6 +57,7 @@
     <Compile Include="AppConfigSettings\KeyValueFeatureMapperTests.cs" />
     <Compile Include="FactoryTests.cs" />
     <Compile Include="CustomAppConfigSection\ConfigurationSectionSwitchProviderSpecs.cs" />
+    <Compile Include="InMemoryProviderSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

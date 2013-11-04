@@ -8,7 +8,7 @@ namespace Toggles.Configuration
     {
         protected System.Configuration.Configuration ConfigManager;
 
-        public IDictionary<string, Feature> FeatureSwitches;
+        public IDictionary<string, Feature> FeatureSwitches { get; protected set; }
 
         public abstract void ReadConfiguration();
 

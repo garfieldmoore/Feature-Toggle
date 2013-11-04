@@ -54,7 +54,8 @@
   <ItemGroup>
     <Compile Include="ApplicationSettingsAcceptanceTests.cs" />
     <Compile Include="ConfigurationSectionTests.cs" />
-    <Compile Include="ExtendingToggler.cs" />
+    <Compile Include="FeaureGateWayTests.cs" />
+    <Compile Include="InMemorySwitchProviderTests.cs" />
     <Compile Include="Integration\ApplicationSettingsTests.cs" />
     <Compile Include="Integration\CustomConfigurationSectionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

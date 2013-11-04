@@ -4,7 +4,7 @@ using Toggles.Configuration.Providers.ConfigurationSection;
 
 namespace Toggles.Configuration
 {
-    internal static class ConfigExtensions
+    public static class ConfigExtensions
     {
         public static List<T> ToList<T>(this FeatureConfiguration config) where T:class 
         {
