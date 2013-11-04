@@ -22,8 +22,7 @@
         [Test]
         public void Should_read_feature_configuration()
         {
-            var dictionary = new Dictionary<string, bool>();
-            dictionary.Add("feature1", true);
+            var dictionary = GivenAnEnabledFeature();
 
             var provider = new InMemorySwitchProvider(dictionary);
             provider.ReadConfiguration();
@@ -32,6 +31,26 @@
             provider.FeatureSwitches.Values.ToArray()[0].State.ShouldBe(true);
         }
 
+        private static Dictionary<string, bool> GivenAnEnabledFeature()
+        {
+            var dictionary = new Dictionary<string, bool>();
+            dictionary.Add("feature1", true);
+            return dictionary;
+        }
+
+        [Test]
+        public void Should_be_able_to_add_checkers_onto_features()
+        {
+            var checker = new StateChecker();
+            var featureDictionary = new Dictionary<string, bool>();
+            featureDictionary.Add("feature", true);
+
+            var provider = new InMemorySwitchProvider(featureDictionary);
+            provider.AddChecker(checker);
+
+            provider.ReadConfiguration();
+            provider.IsAvailable("feature").ShouldBe(true);
+        }
 
     }
 }

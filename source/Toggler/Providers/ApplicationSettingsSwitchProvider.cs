@@ -10,6 +10,8 @@ namespace Toggles.Configuration.Providers
         private readonly KeyValueFeatureMapper _mapper;
         private IApplicationSettings _reader;
 
+        protected Configuration ConfigManager;
+
         public ApplicationSettingsSwitchProvider()
         {
             ConfigManager = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);

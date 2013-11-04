@@ -4,9 +4,11 @@ using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration
 {
+    using Toggles.Configuration.Providers.InMemory;
+
     public abstract class FeatureSwitchProvider : IProvideSwitches
     {
-        protected System.Configuration.Configuration ConfigManager;
+        protected IChecker SwitchChecker;
 
         public IDictionary<string, Feature> FeatureSwitches { get; protected set; }
 
@@ -15,18 +17,21 @@ namespace Toggles.Configuration
         protected FeatureSwitchProvider()
         {
             FeatureSwitches = new Dictionary<string, Feature>();
+            this.SwitchChecker = new StateChecker();
+        }
+
+        public void AddChecker(IChecker checker)
+        {
+            checker.AddChecker(SwitchChecker);
+
+            this.SwitchChecker = checker;
         }
 
         public virtual bool IsAvailable(string featureName)
         {
             try
             {
-//                if (FeatureSwitches[featureName].DependsOn != null)
-//                {
-//                    return FeatureSwitches[featureName].State && FeatureSwitches[featureName].DependsOn.State;
-//                }
-
-                return FeatureSwitches[featureName].State;
+                return this.SwitchChecker.IsAvailable(FeatureSwitches[featureName]);
             }
             catch (Exception e)
             {
