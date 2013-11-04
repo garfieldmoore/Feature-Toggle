@@ -58,7 +58,7 @@ Now I can check what features are enabled;
 
 ### Using different providers
 
-The example below extends the framework to provide an in-memory configuration provider.  This made is easier to unit test!
+The example below extends the framework to provide feature toggles from an in-memory configuration provider.
 
     public class ExtendingToggler
     {

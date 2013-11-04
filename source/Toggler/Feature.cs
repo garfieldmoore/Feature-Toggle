@@ -8,6 +8,6 @@ namespace Toggles.Configuration
     
         public bool State { get; set; }
 
-        public Feature DependsOn { get; set; }
+//        public Feature DependsOn { get; set; }
     }
 }

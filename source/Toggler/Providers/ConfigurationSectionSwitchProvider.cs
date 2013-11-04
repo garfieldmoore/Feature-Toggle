@@ -12,7 +12,7 @@ namespace Toggles.Configuration.Providers
         private static FeatureConfiguration _config;
 
         // TODO: put this on abstract class so it needs to be implemented in factory
-        internal ConfigurationSectionSwitchProvider(IConfigurationReader configurationReader, ConfigurationFeatureMapper mapper)
+        public ConfigurationSectionSwitchProvider(IConfigurationReader configurationReader, ConfigurationFeatureMapper mapper)
         {
             _configurationReader = configurationReader;
             _mapper = mapper;
@@ -23,7 +23,7 @@ namespace Toggles.Configuration.Providers
             _configurationReader = new ConfigSectionReader();
         }
 
-        internal void LoadConfiguration()
+        public void LoadConfiguration()
         {
             try
             {

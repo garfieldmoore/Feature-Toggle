@@ -16,7 +16,7 @@ namespace Toggles.Configuration.Providers
             _mapper = new KeyValueFeatureMapper();
         }
 
-        internal ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper)
+        public ApplicationSettingsSwitchProvider(IApplicationSettings configReader, KeyValueFeatureMapper mapper)
             : this(mapper)
         {
             _reader = configReader;

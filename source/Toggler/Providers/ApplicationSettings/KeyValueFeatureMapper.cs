@@ -4,7 +4,7 @@ using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration.Providers.ApplicationSettings
 {
-    internal class KeyValueFeatureMapper : IFeatureMapper<KeyValueConfigurationCollection>
+    public class KeyValueFeatureMapper : IFeatureMapper<KeyValueConfigurationCollection>
     {
         public virtual List<Feature> Map(KeyValueConfigurationCollection keyValueConfigurationCollection)
         {

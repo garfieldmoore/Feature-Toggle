@@ -3,7 +3,7 @@ using Toggles.Configuration.Interfaces;
 
 namespace Toggles.Configuration.Providers.ConfigurationSection
 {
-    internal class ConfigurationFeatureMapper : IFeatureMapper<FeaturesCollection>
+    public class ConfigurationFeatureMapper : IFeatureMapper<FeaturesCollection>
     {
         public virtual List<Feature> Map(FeaturesCollection featuresCollection)
         {

@@ -7,7 +7,8 @@ namespace Toggles.Configuration
     public abstract class FeatureSwitchProvider : IProvideSwitches
     {
         protected System.Configuration.Configuration ConfigManager;
-        internal IDictionary<string, Feature> FeatureSwitches;
+
+        public IDictionary<string, Feature> FeatureSwitches;
 
         public abstract void ReadConfiguration();
 
@@ -20,10 +21,10 @@ namespace Toggles.Configuration
         {
             try
             {
-                if (FeatureSwitches[featureName].DependsOn != null)
-                {
-                    return FeatureSwitches[featureName].State && FeatureSwitches[featureName].DependsOn.State;
-                }
+//                if (FeatureSwitches[featureName].DependsOn != null)
+//                {
+//                    return FeatureSwitches[featureName].State && FeatureSwitches[featureName].DependsOn.State;
+//                }
 
                 return FeatureSwitches[featureName].State;
             }
