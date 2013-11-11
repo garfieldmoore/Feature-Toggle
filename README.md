@@ -19,7 +19,6 @@ This will add the below configuration section to your app.config;
         <Features>
           <add name="FeatureA" isAvailable="true"/>
           <add name="FeatureB" isAvailable="false"/>
-          <add name="FeatureC" isAvailable="true" DependsOn="FeatureB"/>
         </Features>
       </FeatureConfiguration>
 
